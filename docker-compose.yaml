@@ -5,8 +5,8 @@ services:
     hostname: ubuntu-c
     container_name: ubuntu-c
     image: iamraashoka/diveintoansible:ansible
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     ports: 
      - ${UBUNTUC_PORT_SSHD}:22
      - ${UBUNTUC_PORT_TTYD}:7681
@@ -28,8 +28,8 @@ services:
      - ${UBUNTU1_PORT_SSHD}:22
      - ${UBUNTU1_PORT_TTYD}:7681
     privileged: true
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
      - ${CONFIG}:/config
@@ -43,8 +43,8 @@ services:
     hostname: ubuntu2
     container_name: ubuntu2
     image: iamraashoka/diveintoansible:ubuntu
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     ports: 
      - ${UBUNTU2_PORT_SSHD}:22
      - ${UBUNTU2_PORT_TTYD}:7681
@@ -62,8 +62,8 @@ services:
     hostname: ubuntu3
     container_name: ubuntu3
     image: iamraashoka/diveintoansible:ubuntu
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     ports: 
      - ${UBUNTU3_PORT_SSHD}:22
      - ${UBUNTU3_PORT_TTYD}:7681
@@ -87,8 +87,8 @@ services:
      #- ${CENTOS1_PORT_SSHD}:2222
      - ${CENTOS1_PORT_TTYD}:7681
     privileged: true
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
      - ${CONFIG}:/config
@@ -106,8 +106,8 @@ services:
      - ${CENTOS2_PORT_SSHD}:22
      - ${CENTOS2_PORT_TTYD}:7681
     privileged: true
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
      - ${CONFIG}:/config
@@ -125,8 +125,8 @@ services:
      - ${CENTOS3_PORT_SSHD}:22
      - ${CENTOS3_PORT_TTYD}:7681
     privileged: true
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
      - ${CONFIG}:/config
@@ -150,8 +150,8 @@ services:
     container_name: docker
     image: iamraashoka/diveintoansible:dind
     privileged: true
-    # environment:
-    # - LOCALHOST_OVERRIDE=192.168.1.107
+    environment:
+    - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     volumes:
      - ${ANSIBLE_HOME}/shared:/shared
     networks:
@@ -163,7 +163,7 @@ services:
     image: iamraashoka/diveintoansible:portal
     environment:
      - NGINX_ENTRYPOINT_QUIET_LOGS=1
-     - LOCALHOST_OVERRIDE=192.168.1.107
+     - LOCALHOST_OVERRIDE=5791-102-244-45-248.ngrok-free.app/
     depends_on:
      - centos1
      - centos2
